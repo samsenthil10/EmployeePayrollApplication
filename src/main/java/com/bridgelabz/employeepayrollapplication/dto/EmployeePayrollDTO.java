@@ -1,22 +1,32 @@
 package com.bridgelabz.employeepayrollapplication.dto;
+
+import java.time.LocalDate;
+import java.util.List;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
-public class EmployeePayrollDTO {
-    
-    @Pattern(regexp = "^[A-Z]{1}[a-z]{2,}$",message = "Employee Name Invalid")
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import lombok.ToString;
+
+public @ToString class EmployeePayrollDTO {
+
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee Name is Invalid")
     public String name;
 
-    @Min(value = 500,message = "Minimum wage should be more than 500")
+    @Min(value = 500, message = "Minimum wage should be more than 500")
     public long salary;
 
-    public EmployeePayrollDTO(String name, long salary) {
-        this.name = name;
-        this.salary = salary;
-    }
+    public String gender;
 
-    @Override
-    public String toString() {
-        return "name=" + name + ":salary=" + salary;
-    }
+    @JsonFormat(pattern = "dd MMM yyyy")
+    public LocalDate startDate;
+
+    public String note;
+
+    public String profilePic;
+
+    public List<String> departments;
+
 }
