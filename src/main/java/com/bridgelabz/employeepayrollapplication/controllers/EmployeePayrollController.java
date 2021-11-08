@@ -51,7 +51,7 @@ public class EmployeePayrollController {
 			@Valid @RequestBody EmployeePayrollDTO employeePayrollDTO) {
 		log.debug("Employee DTO: " + employeePayrollDTO.toString());
 		EmployeePayrollData employeePayrollData = employeePayrollService.createEmployeePayrollData(employeePayrollDTO);
-		ResponseDTO responseDTO = new ResponseDTO("Created Employee Pyroll Data Successfully", employeePayrollData);
+		ResponseDTO responseDTO = new ResponseDTO("Created Employee Payroll Data Successfully", employeePayrollData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
@@ -60,7 +60,7 @@ public class EmployeePayrollController {
 			@RequestBody EmployeePayrollDTO employeePayrollDTO) {
 		EmployeePayrollData employeePayrollData = employeePayrollService.updateEmployeePayrollData(employeeId,
 				employeePayrollDTO);
-		ResponseDTO responseDTO = new ResponseDTO("Updated Employee Pyroll Data Successfully", employeePayrollData);
+		ResponseDTO responseDTO = new ResponseDTO("Updated Employee Payroll Data Successfully", employeePayrollData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
