@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
@@ -26,6 +27,7 @@ import com.bridgelabz.employeepayrollapplication.services.IEmployeePayrollServic
 @RestController
 @RequestMapping("/employeepayrollservice")
 @Slf4j
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class EmployeePayrollController {
 
 	@Autowired
